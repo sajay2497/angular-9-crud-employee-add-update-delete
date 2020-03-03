@@ -1,1 +1,8 @@
-<p>employee-list works!</p>
+<table class="table table-hover">
+    <tr *ngFor="let user of service.list">
+      <td (click)="populateForm(user)">[{{user.id}}]</td>
+      <td (click)="populateForm(user)">{{user.name}}</td>
+      <td (click)="populateForm(user)">{{user.color}}</td>
+      <td><button (click)="onDelete(user.id)"  class="btn btn-sm btn-outline-danger">X</button></td>
+    </tr>
+  </table>

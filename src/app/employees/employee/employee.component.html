@@ -1,12 +1,13 @@
 <form #form = "ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
     <div class="form-group">
         <label>Name</label>
-        <input type = "text" name="name" id="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" required>  
+        <input type = "text" name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" required>  
         <div class="validation-error" *ngIf="name.invalid && name.touched">This Field Is Required!!</div>
     </div>
     <div class="form-group">
         <label>Color</label>
-        <input type = "text" name="color" id="color" #color="ngModel" [(ngModel)]="service.formData.color" class="form-control" required>
+        <input type = "text" name="color" #color="ngModel" [(ngModel)]="service.formData.color" class="form-control" required>
         <div class="validation-error" *ngIf="color.invalid && color.touched">This Field Is Required!!</div>
     </div>
     <div class="form-group">
